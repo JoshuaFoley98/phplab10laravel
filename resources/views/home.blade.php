@@ -10,9 +10,9 @@
         <h1>Login</h1>
         <form action="/login" method="POST">
             @csrf    
-            <input type="text" for="loginname" id="loginname" placeholder = "enter name">
+            <input type="text" name="loginname" id="loginname" placeholder = "enter name">
             <br />
-            <input type="password" for="loginpassword" id="loginpassword" placeholder="enter password">
+            <input type="password" name="loginpassword" id="loginpassword" placeholder="enter password">
             <br />
             <button>Login</button>
         </form>

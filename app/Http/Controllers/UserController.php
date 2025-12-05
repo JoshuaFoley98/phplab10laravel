@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -17,19 +16,18 @@ class UserController extends Controller
 
         $incomingData["password"] = bcrypt($incomingData["password"]);
         $user = User::create($incomingData);
-        auth()->login($user);
-        return redirect("/page1");
+        return redirect("/");
     }
 
-    public function logout(request $request) {
+    public function logout(Request $request) {
         auth()->logout();
 
         return redirect ("/");
     }
 
-    public function login(request $request){
+    public function login(Request $request){
         $credentials = $request->validate([
-            "loginname" => ["requred", "string"],
+            "loginname" => ["required", "string"],
             "loginpassword" => ["required", "string"]
         ]);
 

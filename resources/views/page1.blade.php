@@ -7,8 +7,10 @@
 </head>
 <body>
     @auth
-        <p>THERE WILL BE STUFF HERE SOON. YOU ARE LOGGED IN.</p>
+        <p>Hello {{$user}}. you are logged in. here is the second last turtle of the semester: </p>
+        <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/A_butterfly_feeding_on_the_tears_of_a_turtle_in_Ecuador.jpg/1280px-A_butterfly_feeding_on_the_tears_of_a_turtle_in_Ecuador.jpg" alt="" width="500"/>
     <form action = "/logout" method="POST">
+        @csrf
         <button>logout</button>
     </form> 
 
