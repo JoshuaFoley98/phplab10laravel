@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function register(request $request) {
+    public function register(Request $request) {
         $incomingData = $request->validate([
             "email" => ["required", "string"],
             "name" => ["required", "string", "max:255"],  
