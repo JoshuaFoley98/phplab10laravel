@@ -16,10 +16,9 @@ class UserController extends Controller
         ]);
 
         $incomingData["password"] = bcrypt($incomingData["password"]);
-        print_r($incomingData);
-        /*$user = User::create($incomingData);
+        $user = User::create($incomingData);
         auth()->login($user);
-        return redirect("/page1");*/
+        return redirect("/page1");
     }
 
     public function logout(request $request) {
